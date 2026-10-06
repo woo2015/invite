@@ -1,0 +1,922 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Final Moment Spemdalas 23 - Nama Siswa Tidak Ditemukan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Konfigurasi Tailwind Kustom -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            700: '#1a2f4c',
+                            800: '#11223b',
+                            900: '#0a1526',
+                            950: '#050a14',
+                        },
+                        gold: {
+                            400: '#e5c07b',
+                            500: '#d4af37',
+                            600: '#b8962e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #0a1526; color: #f3f4f6; overflow: hidden; }
+        html { scroll-behavior: smooth; }
+.parallax-bg {
+    /* Menggunakan direct link Google Drive dengan ID tersebut */
+    background-image: linear-gradient(rgba(10, 21, 38, 0.8), rgba(10, 21, 38, 0.9)), url('revbg.jpeg');
+    background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;
+}
+        /* Animasi Konten Utama yang Muncul dari Belakang */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px) scale(0.97); /* Sedikit di bawah dan sedikit mengecil */
+            transition: 
+                opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1); /* Maju dan tegak dengan sempurna */
+        }
+        /* Transisi Cover Screen Ultra-Aesthetic (Cinematic Dissolve) */
+        #cover-screen {
+            /* Menggunakan kurva easeOutExpo (0.16, 1, 0.3, 1) untuk pergerakan super halus khas animasi premium */
+            transition: 
+                opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 1.5s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: scale(1);
+            filter: blur(0px);
+        }
+        .hide-cover {
+            opacity: 0;
+            transform: scale(0.92); /* Efek tenggelam ke belakang (sink-in) yang elegan */
+            filter: blur(15px);     /* Transisi blur lensa yang sangat halus */
+            pointer-events: none;
+        }
+        
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a1526; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
+        
+        /* Efek Kupu-kupu Realistis */
+        @keyframes flap-left {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(65deg); }
+        }
+
+        @keyframes flap-right {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(-65deg); }
+        }
+
+        /* Efek Terbang Berputar/Oeng (Organik) */
+        @keyframes flight-wobble {
+            0% { transform: translateX(0) translateY(0) rotate(0deg); }
+            25% { transform: translateX(-15px) translateY(-25px) rotate(-15deg); }
+            50% { transform: translateX(15px) translateY(15px) rotate(15deg); }
+            75% { transform: translateX(20px) translateY(-15px) rotate(5deg); }
+            100% { transform: translateX(0) translateY(0) rotate(0deg); }
+        }
+
+        .wing-left {
+            transform-origin: 50% 50%;
+            animation: flap-left 0.12s infinite ease-in-out;
+            fill: rgba(212, 175, 55, 0.9); /* Emas Agak Transparan */
+        }
+
+        .wing-right {
+            transform-origin: 50% 50%;
+            animation: flap-right 0.12s infinite ease-in-out;
+            fill: rgba(212, 175, 55, 0.9);
+        }
+
+        .butterfly-body {
+            fill: #e5c07b; /* Emas Terang untuk Badan & Kepala */
+        }
+
+        /* Efek Berkilauan (Glowing Emas + Putih) */
+        .butterfly-glow {
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 3px rgba(255, 255, 255, 0.6));
+        }
+
+        .flight-path {
+            animation: flight-wobble 4s infinite ease-in-out;
+        }
+        
+        /* Efek Teks Kaca/Metalik Mengkilap */
+        .text-shiny-glass {
+            background: linear-gradient(
+                120deg,
+                #d4af37 20%,
+                #ffffff 40%,
+                #ffffff 60%,
+                #d4af37 80%
+            );
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine-glass 3s linear infinite;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.6));
+        }
+
+        @keyframes shine-glass {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+
+<body class="font-sans antialiased selection:bg-gold-500 selection:text-navy-900 parallax-bg">
+
+
+
+    <audio id="bg-music" loop preload="auto">
+
+        <source src="lagu-ghost.mp3" type="audio/mpeg">
+
+        Browser Anda tidak mendukung elemen audio.
+
+    </audio>
+
+    <div id="butterfly-container" class="fixed inset-0 pointer-events-none z-40 overflow-hidden"></div>
+
+
+
+    <div id="cover-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-navy-950 text-center px-4 parallax-bg">
+
+        <div class="space-y-6 max-w-lg w-full">
+
+            <h3 class="text-gold-400 font-serif italic text-lg md:text-xl tracking-wider">Invitation</h3>
+
+            <img src="https://lh3.googleusercontent.com/d/1OlbYku0v93a9incbGW1BDRhYq0nNkFET" alt="Logo Spemdalas 23" class="w-64 md:w-80 mx-auto object-contain drop-shadow-lg">
+
+            <div class="w-24 h-px bg-gold-500 mx-auto my-6"></div>
+
+            <p class="text-white font-medium text-lg md:text-xl my-2">In Honor of:</p>
+
+            <!-- Nama Siswa di Cover (Ukuran Asli + Efek Kaca) -->
+            <h2 class="text-shiny-glass font-serif text-2xl md:text-3xl mt-8 mb-3 font-medium tracking-wide drop-shadow-md">
+                Nama Siswa Tidak Ditemukan            </h2>
+            
+            <!-- Jabatan / Posisi (Otomatis dari Database) -->
+            <p class="text-gold-400/80 text-xs md:text-sm tracking-[0.2em] uppercase font-light mb-8 drop-shadow-md">
+                            </p>
+
+            
+
+            <button id="open-btn" class="mt-8 px-8 py-3 bg-gold-500 hover:bg-gold-600 text-navy-950 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center gap-2 mx-auto">
+
+                <i class="fa-solid fa-envelope-open-text"></i> See the details
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <main class="relative">
+
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center px-4 py-20 parallax-bg relative">
+
+            <div class="absolute inset-0 bg-gradient-to-b from-navy-950/80 via-navy-900/60 to-navy-950"></div>
+
+            
+
+            <div class="relative z-10 space-y-8 reveal max-w-3xl mx-auto w-full">
+
+                <img src="https://lh3.googleusercontent.com/d/1up9g4f41DTnYkNYwc6T-RhJQq0HW09Pa" alt="Logo Spemdalas 23" class="w-72 md:w-96 mx-auto object-contain mb-2 drop-shadow-xl">
+
+                <p class="text-gray-300 tracking-widest uppercase text-sm md:text-base mb-8">Graduation & Farewell</p>
+
+                
+
+                <div class="py-8 max-w-2xl mx-auto px-2">
+
+                    <div class="text-gray-300 text-sm md:text-base leading-relaxed mb-8 space-y-5 font-light">
+
+                        <p>
+
+                            For three years we studied under the same sky.<br>
+
+                            We watched clouds of doubt pass, chased the sun of knowledge,<br>
+
+                            and learned that every storm only taught us how to fly.
+
+                        </p>
+
+                        
+
+                        <p>
+
+                            Today, the sky is no longer a ceiling, but a calling.<br>
+
+                            With hearts full of gratitude, we invite you to witness<br>
+
+                            <span class="block mt-3 text-white font-bold text-lg md:text-xl tracking-wider [text-shadow:_0_0_15px_rgba(255,255,255,0.8),_0_0_30px_rgba(255,255,255,0.6)]">
+
+                                The Final Moment IX Grades of SMP Muhammadiyah 12 GKB Gresik
+
+                            </span>
+
+                        </p>
+
+                        
+
+                        <p>
+
+                            Because an ending here is just a sunrise somewhere else.<br>
+
+                            Your presence is the wind beneath our wings.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+
+                <i class="fa-solid fa-chevron-down text-gold-500 text-2xl opacity-70"></i>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="py-24 relative overflow-hidden">
+
+            <div class="absolute top-0 left-0 w-64 h-64 bg-gold-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 -translate-x-1/2 -translate-y-1/2"></div>
+
+            <div class="absolute bottom-0 right-0 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 translate-x-1/2 translate-y-1/2"></div>
+
+            
+
+            <div class="max-w-4xl mx-auto px-6 relative z-10 text-center reveal">
+
+                <h2 class="text-3xl md:text-5xl font-serif text-white mb-4 tracking-wide drop-shadow-md">Save the Date</h2>
+
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-10"></div>
+
+                
+
+                <div class="space-y-4 text-gray-200 text-lg md:text-xl font-light tracking-wide">
+                    <p>Saturday, June 20<sup>th</sup>, 2026</p>
+                    <p>06.30 - 11.00 AM</p>
+                    <p>Giri Loka Ballroom, Aston Gresik Hotel</p>
+
+                </div>
+
+                <div class="mt-12 bg-navy-900/60 border border-gold-500/30 rounded-2xl p-8 shadow-2xl max-w-lg mx-auto transform transition hover:scale-105 duration-500 relative overflow-hidden group">
+                    
+                    <div class="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-4 p-4 opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none">
+                        <i class="fa-solid fa-graduation-cap text-8xl md:text-9xl text-gold-500"></i>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-serif text-gold-400 mb-6 border-b border-navy-700 pb-4">Special Performances</h3>
+                        <ul class="text-gray-300 space-y-4 text-left w-fit mx-auto md:text-lg font-light">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-500 text-sm"></i> Awarding</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-500 text-sm"></i> Book Launching</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-500 text-sm"></i> Grade IX Singing</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-star text-gold-500 text-sm"></i> Opera Titled Masyitah</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 border-t border-navy-800 relative z-10">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center reveal mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Toward a Happy Day</h2>
+                    <div class="w-16 h-1 bg-gold-500 mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                    
+                    <!-- Kotak Countdown -->
+                <div class="flex flex-col justify-center items-center bg-white/10 backdrop-blur-md border border-white/40 rounded-2xl p-8 shadow-[0_0_20px_rgba(255,255,255,0.2)]">
+                    
+                    <h3 class="text-2xl md:text-3xl font-serif text-gold-400 mb-8 drop-shadow-md">Counting Days</h3>
+                    
+                    <i class="fa-regular fa-clock text-4xl text-gold-500 mb-8 opacity-80 animate-pulse drop-shadow-md"></i>
+                    
+                    <div class="grid grid-cols-4 gap-2 md:gap-4 w-full text-center">
+                        <!-- Kotak Hari -->
+                        <div class="bg-white/20 p-3 rounded-xl border border-white shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all hover:scale-105">
+                            <span id="days" class="block text-2xl md:text-4xl font-serif text-white font-bold mb-1 drop-shadow-md">00</span>
+                            <span class="text-xs md:text-sm text-white/90 uppercase tracking-wider font-medium">Hari</span>
+                        </div>
+                        
+                        <!-- Kotak Jam -->
+                        <div class="bg-white/20 p-3 rounded-xl border border-white shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all hover:scale-105">
+                            <span id="hours" class="block text-2xl md:text-4xl font-serif text-white font-bold mb-1 drop-shadow-md">00</span>
+                            <span class="text-xs md:text-sm text-white/90 uppercase tracking-wider font-medium">Jam</span>
+                        </div>
+                        
+                        <!-- Kotak Menit -->
+                        <div class="bg-white/20 p-3 rounded-xl border border-white shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all hover:scale-105">
+                            <span id="minutes" class="block text-2xl md:text-4xl font-serif text-white font-bold mb-1 drop-shadow-md">00</span>
+                            <span class="text-xs md:text-sm text-white/90 uppercase tracking-wider font-medium">Menit</span>
+                        </div>
+                        
+                        <!-- Kotak Detik -->
+                        <div class="bg-white/20 p-3 rounded-xl border border-white shadow-[0_0_15px_rgba(255,255,255,0.6)] transition-all hover:scale-105">
+                            <span id="seconds" class="block text-2xl md:text-4xl font-serif text-white font-bold mb-1 drop-shadow-md">00</span>
+                            <span class="text-xs md:text-sm text-white/90 uppercase tracking-wider font-medium">Detik</span>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-navy-700 flex flex-col h-[350px]">
+                        <iframe src="https://maps.google.com/maps?q=ASTON+Gresik+Hotel+&+Conference+Center&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; flex-grow:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        
+                        <div class="bg-navy-950 p-4 border-t border-navy-700 flex justify-center">
+                            <a href="https://maps.app.goo.gl/Ku6UANyaEJeUkQJL6" target="_blank" rel="noopener noreferrer" class="px-8 py-2 bg-gold-500 hover:bg-gold-600 text-navy-950 rounded-full font-medium transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-sm w-full md:w-auto">
+                                <i class="fa-solid fa-map-location-dot"></i> Buka Peta di Aplikasi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- RSVP & Wishes Section -->
+        <section class="py-24 relative">
+            <div class="max-w-4xl mx-auto px-6 relative z-10">
+                <div class="text-center reveal mb-12">
+                    <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">RSVP n' Greetings</h2>
+                    <div class="w-16 h-1 bg-gold-500 mx-auto mb-8"></div>
+                    <p class="text-gray-300 italic font-serif text-lg md:text-xl leading-relaxed px-4">
+                        "We kindly invite you to share your impressions, messages, prayers, and best wishes as a cherished moment for the 23<sup>rd</sup> Final Moment of Spemdalas."
+                    </p>
+                </div>
+
+                <!-- Pembungkus Grid: Membagi menjadi 2 kolom di layar besar -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+                    
+                    <!-- KOTAK KIRI: Form Pengisian -->
+                    <div class="bg-navy-900 border border-navy-700 rounded-2xl p-6 md:p-8 shadow-xl h-fit">
+                        <form id="rsvp-form" class="space-y-4">
+                            <!-- Input Nama -->
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-2">Name :</label>
+                                <input type="text" id="guest-name" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-navy-950 focus:outline-none focus:border-gold-500 transition-colors shadow-inner" placeholder="Enter your name...">
+                            </div>
+                        
+                            <!-- Dropdown Kehadiran (BARU) -->
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-2">Attendance :</label>
+                                <select id="guest-attendance" required class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-navy-950 focus:outline-none focus:border-gold-500 transition-colors shadow-inner cursor-pointer">
+                                    <option value="Hadir">Present</option>
+                                    <option value="Tidak Hadir">Not Present</option>
+                                </select>
+                            </div>
+                        
+                            <!-- Input Ucapan -->
+                            <div>
+                                <label class="block text-gray-300 text-sm font-medium mb-2">Greetings and Prayers :</label>
+                                <textarea id="guest-message" required rows="4" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-navy-950 focus:outline-none focus:border-gold-500 transition-colors shadow-inner" placeholder="Write your greetings and prayers here..."></textarea>
+                            </div>
+                        
+                            <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-3 px-4 rounded-lg transition-colors flex justify-center items-center gap-2 mt-2 shadow-lg">
+                                <i class="fa-regular fa-paper-plane"></i> Send
+                            </button>
+                        </form>
+
+                    </div>
+
+                    <!-- KOTAK KANAN: Menampilkan Ucapan -->
+                    <div class="bg-navy-900 border border-navy-700 rounded-2xl p-6 md:p-8 shadow-xl flex flex-col h-[500px]">
+                        <h3 class="text-xl font-serif text-white mb-4 border-b border-navy-700 pb-4">Guest Greetings (<span id="wish-count">215</span>)</h3>
+                        
+                        <!-- Scrollable Container -->
+                        <div id="wishes-container" class="flex-1 overflow-y-auto pr-2 space-y-4">
+
+                        <div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dewy Kartika</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 08:49</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">“Never give up.. if the ‘Why’ is strong enough.. the ‘How’ will follow”</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rohmawati</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 08:45</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga anak2 senantias dalam penjagaan Allah. Aamiin...</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">M Syarifuddin Hidayatullah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 06:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">semoga kegiatan berjalan dengan baik</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Adam Firdaus </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 06:50</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulations on finishing your Junior High School! May your education be a light that guides you, and may Allah SWT bless your next steps with success and happiness.&quot; Aamiin.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Siti Uswatul janah </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 06:27</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Success always,  spemdalas class of 23</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Haifa Marta</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 06:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">See you on top Sastregala</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Haifa Marta</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 06:11</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation Satregala 2026 see you on top</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Suhud Maryanto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 05:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga acara berjalan lancar</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Mar&#039;atus Sholikah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 05:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga lulusan Spemdalas bisa menjadi penerus bangsa yang cerdas dan bermartabat</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Milatul Fajariah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 05:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulation anak2 hebat... bismillah gapailah cita2mu dengan belajar tanpa lelah, kembangkan potensi kalian, tetaplah menjadi pribadi yg memiliki adab yg baik, jadi anak yg soleh solihah<br />
+<br />
+Terima kasih spemdalas telah membersamai putra &amp; putri kami menjadi pribadi yg berkarakter dan memiliki adab yg baik</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Putrizraa</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 04:30</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">selamat melanjutkan petualangan yang baru anak anak..<br />
+Tumbuhlah dengan berani, bermimpilah tanpa ragu, dan tetaplah mekar di mana pun medannya.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nani Ratnawulan </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 04:29</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">happy graduation angkatan 23..kalian hebat 🤩</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">suwartono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 04:22</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">semoga acara berjalan lancar </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">suw</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 04:22</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">semoga acara berjalan lancar</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dwi Bagus Gunawan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 04:09</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Keep spirit</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Halimah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 03:38</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga anak-anak dapat meraih kesuksesan dunia akhirat dengan jalan yang dimudahkan Allah</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Novi Nazilatur R</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">20 Jun 2026, 00:26</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terimakasih sudah berjuang dengan baik selama 3 th di SMP.. Selamat menapaki pendidikan di jenjang berikutnya dan Semangat selalu.. 🌷</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Fihalisa</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 23:49</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan sukses untuk kegiatan akhir kelas 9, allahuyassir 🌷</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ain Nurwindasari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 22:26</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga acara berjalan dengan lancar dan sukses </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Atha Putri Dharmawan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:57</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">🤍 “No matter where life takes you, remember that you are deeply loved, endlessly supported, and never alone dek ara”. 🌷<br />
+<br />
+    Once Spemdalas, always Spemdalas. Sukses terus! 🤍<br />
+* Bangga jadi alumni Spemdalas. Keep shining! ✨<br />
+<br />
+<br />
+<br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Muthia Naila Putri Dharmawan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:54</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">🤍 “Keep shining our ara, little sister; your journey is just beginning, and I know you’ll do amazing things.”<br />
+<br />
+With Love </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dian Palupi Chrisdiani </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:52</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">May Allah bless her with knowledge that benefits, a heart that remains faithful, the courage to believe in herself, and the wisdom to navigate every path ahead. May her dreams be guided by His mercy and fulfilled in the best way and time.<br />
+<br />
+Our heartfelt gratitude to all Ustadz and Ustadzah for their dedication, patience, guidance, and prayers throughout these years. Thank you for nurturing not only knowledge, but also character and faith.<br />
+<br />
+Jazakumullahu khairan katsiran.<br />
+<br />
+With love and gratitude,<br />
+The Family of Kirana Ralia Putri Dharmawan 🤍</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Teuku Ramadhan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:43</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan sukses selalu</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Eliza</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:41</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan sukses final moment ke-23 Spemdalas. Congratulations untuk siswa kelas 9!!</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">ABDULLAH ALFAROBI</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, semoga kalian semua menjadi siswa yang sholeh sholehah.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Agus M h</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:04</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Alfi </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 21:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusannya anak anak kls 9, semoga ilmu yg didapatkan barokah dan bisa melanjutkan ke sekolah impian, semangat masa depan masih panjang jangan lupa sholat 5 waktunya ya ❤</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dian</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan sukses final moment Spemdalas ke-23🫶</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nur Izzatus</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:55</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Sukses selalu untuk anak- anak kls 9<br />
+Ini adalah babak selanjutnya menuju keberhasilan...<br />
+Tetap jaga iman dan kebahagiaan karena di dalam raga yg kuat ada <br />
+Do&#039;a yang mengalir dan keyakinan yang positif</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">citra</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:53</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">wish u luck in every process</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">WAHYU MTK</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:53</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan semangat anak anakku kelas 9 angkatan 23 Spemdalas. Semoga tetap istiqomah berbuat baik dan selalu menjadi kebanggaan orang tua, ustadz/ah dan alamamater. <br />
+<br />
+See you on top gusssi ❤️</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Abdul Shomad Alhak</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Gapai Cita&quot;mu tp jangan Lupa dengan Proses Perjuangan yang akan mengantarmu untuk menggapai Cita&quot; dan Tujuan Hidupmu Gaes...Ibadah,Doa Dan Ikhtiyar jangan d Lupakan</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dwi Bagus Gunawan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Acara ini terbaik 👍</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Haris Firmansyah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:50</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Amazing</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">EMI DWI WIJAYANTK</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:49</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">alhamdulillah anak anak kelas 9 angkatan ke-23 kalian sudah berhasil melewati perjalanan 3 tahun yang penuh suka duka ini dengan sukses... <br />
+<br />
+Terus semangat menuntut ilmu di manapun kalian berada nak... <br />
+<br />
+See you on top... </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Edy Kurniawan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Sukses selalu untuk angkatan 23 Spemdalas 🚁</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:45</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terimakasih sudah menikmati setiap perjuangan selama 3 tahun. <br />
+Bismillah lebih bersemangat belajar meraih kesuksesan hidup. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Chanif Ichsan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:44</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">bismillah acara besok lancar dan sukses..aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Mr Yugo</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 20:43</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Assalamualaikum everybody </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anggraeni</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 19:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulation and happy graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Henny Novia</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 19:47</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Daun yang tumbuh tanpa pengaruh Sang Musim<br />
+Untuk SMPEMDALAS dan Siswa Siswi nya </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Melly Gunawati </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 19:26</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Sukses Dunia-akhirat </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Annisa Ilmi Y</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 19:21</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga tercapai segala yg dicita2kan. Ribuan mil perjalanan hidup dimulai dari 1 langkahmu yang sekarang.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Heri amilah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 19:17</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga Lancar dan Sukses acaranya</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Firda</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 18:55</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih para pembimbing spemdalas.. Semoga anak anak kita menjadi anak yg sholeh dan sholihah.. 🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Mukhlis Usman</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 17:45</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Maya Rosdiana</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 17:44</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Pambangun Dwi Wijayanto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 17:31</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation angkatan 23, Sukses selalu buat kalian semua.... Terima kasih kepada Ustadz dan Ustadzah atas bimbingannya selama ini....</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ida E</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 14:48</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusan para siswa Spemdalas,Semoga Ilmu yg didapat bermanfaat, Berkah &amp; Sukses selalu .<br />
+Terima kasih kepada Ustadz &amp; Ustadzah</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">ismi Wardini </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 13:38</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah... Terimakasih ustad &amp; ustadzah karena telah membimbing putra &amp; putri kami selama 3 tahun ini. Dan, untuk spemdalas semoga selalu menjadi yang terbaik.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Satria hadi Nur wahid</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 12:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Asalamualaikum</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Satria jadi Nur wahid</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 12:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Assalamu&#039;alaikum</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Sukma Harum</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 10:55</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Good luck for the next journey, kiddos</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Elif Yuhannah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 08:38</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation to all students, semoga acara berjalan lancar dan sukses.<br />
+Terimakasih buat seluruh Ustadz dan Ustadzah </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yuyud Tri Wahyuni</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 07:17</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulations on your graduation! May this achievement be the beginning of many more successes in your life.<br />
+Thank&#039;s to all the teachers, may Allah bless you<br />
+<br />
+Selamat atas kelulusanmu.<br />
+Semoga pencapaian ini menjadi awal dari banyak kesuksesan lainnya dalam hidupmu. Aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Prastiwi alienda</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 06:52</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih untuk ustadz dan ustadzah atas ilmu yang sudah diberikan kepada anak-anak, semoga bermanfaat di dunia dan di akhirat</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Reny Eka</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 05:37</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Thank you to all Ustadz and Ustadzah for your guidance, support, and direction throughout our child&#039;s learning journey at Spemdalas.<br />
+<br />
+May Allah reward all of your kindness with the best of rewards and grant you abundant barakah in this life and the Hereafter.<br />
+<br />
+May Allah always keep you under His protection, bestow His mercy upon you, and grant you continued health and well-being. Amiin.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tika</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 04:35</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga sukses </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tika </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">19 Jun 2026, 04:34</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga sukses lancar </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rizky Andita</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 20:09</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih kepada seluruh guru atas ilmu dan bimbingannya. Semoga anak-anak menjadi generasi yang saleh, berilmu, dan sukses dunia akhirat. Selamat atas kelulusan kelas IX</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nunuk Isdanti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 19:29</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga langkah mu ke depan lebih bercahaya dan berkah</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nafisah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 19:22</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulilah...Happy graduation to all students..</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ranny Romadhoni</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 17:02</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah .. Tidak salah saya mempercayakan pendidikan anak saya di SPEMDALAS, semua harapan saya sebagai orangtua sudah terpenuhi disini. Semoga tambah sukses spemdalas, im proud of you</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">AnisZ</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 15:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, dan trimksh ta terhingga untuk semua asatidz dan ustaadzat spemdalas. Jazaakumullah ahsanal jaza. Semoga ilmu yg diberikan kpd ananda bermanfaat dan barokah dunia akhirat. Aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Bertha Adriani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 14:02</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation, may Allah bless every good path you choose. <br />
+And thanks to Spemdalas for every best moments and memories</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Riza Yulia Santi</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 12:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation, Bismillah the starting point towards success in achieving the highest ideals.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Raufikha Yunita &amp; Adi Kurnia Pratama Putra </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 12:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, thank you so much to all the teachers at SPEMDALAS for teaching our son both academic and social knowledge. Your dedication has truly helped him grow beyond our expectations, turning him into a son we are incredibly proud of. Thank you once again to everyone at SPEMDALAS for your incredible support and guidance. From M Fathir Reza P parents. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Riska Dwi</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 11:20</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation <br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Indira</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 11:09</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, the day for you my son to start the senior high school is coming. Thank you Spemdalas, for all the lessons throughout those junior years, we hope you could keep being best friends and mentors to all the youngsters in achieving their best performances. BaarakAllahu fiikum.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Christina yuniarti </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 11:08</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan sukses atas kelulusan siswa-siswi Spemdalas! Semoga ilmu yang didapatkan berkah, bermanfaat, dan menjadi jembatan untuk meraih cita-cita🤲 amiin </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Akhmad sujono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 11:06</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Hope that spemdalas more shinning like the stars in the sky. <br />
+And for all children will be reach their dream. <br />
+❤️❤️</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ely</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">May Spemdalas continue to shine brightly and achieve more outstanding achievements in the years to come.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yuni Indah </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">*Happy Graduation my sweet little girl*<br />
+Chasing a dream requires hard work, passion, and many sacrifices. <br />
+You’ve shown that you’ve made it. <br />
+Never stop learning and growing.<br />
+We will always on your side with full of love.<br />
+*Thanks a million to all Ustadz &amp; Ustadzah of SPEMDALAS. May Allah bless your knowledge &amp; multiply your rewards*</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Elant Siswi Anggrainy</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:55</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulation for all students and the SMP Muhammadiyah 12 GKB Gresik for the graduation year 2026 .<br />
+<br />
+We truly appreciate for all the experiences for our child along 3 years, we believe this can be the ticket to ride to reach the successful of them.<br />
+<br />
+I wish SMP Muhammadiyah 12 GKB Gresik could continuous success in the future.<br />
+<br />
+Amin YRA  </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Indah Murdayati</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">See u there 🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Indah Murdayatu</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">See u there 🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tatri Suwandi</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillahikullihal....<br />
+Terima kasih Ya Allah, terima kasih para ustad &amp; ustadzah Spemdalas,,, telah membersamai putri kami selama 3 thn ini...<br />
+Segala peluh yg menetes, Insya Allah akan berubah menjadi Lillah &amp; Pahala dr Allah...<br />
+<br />
+Jazakillah Khoir... 🙏</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Arief Rahman Wicaksono </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:44</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga kelulusan Ananda dari Spemdalas ini dapan menjadi batu pijakan yg kuat bagi Ananda menjelang jenjang pendidikan berikutnya </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Sheillah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:42</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Hi kak,hi spem..i know if im not the best mom and parents maybe.<br />
+But u know me so well kak,mum cumaa pgen kamu bisa Jadi laki2 mandiri dan wise lagi as a man. Oke kalo sekolah emang ga easy krn pny target2. but Nak,ketahuilah kaloo idupp ini keras.oke next step plis kamu lebiiih punya target impian kamu!</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Agus Lumaksono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:31</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih ustadz dan ustadzah atas semua bimbingan dan arahannya sehingga ananda bisa melewati hari2 menuju kesuksesan dg ilmu yg bermanfaat dan riang gembira dan sukses selalu utk spemdalas</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Loni Octavani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">18 Jun 2026, 10:16</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulation ..<br />
+All your hard work has pay off<br />
+You did it 👍</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nur Latifah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 21:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah...<br />
+Terima kasih kepada ustadz dan ustadzah yang sudah mendidik anak-anak kami.<br />
+semoga Allah SWT membalas semua kebaikan dengan pahala yang berlipat ganda.<br />
+sukses selalu tuk SPEMDALAS..</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Erna</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 19:56</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation to all students<br />
+Angkatan 23<br />
+Tak terasa sudah 3 tahun kalian menuntut ilmu di spemdalas,semoga ilmu yang di dapat bisa bermanfaat. Terimakasih untuk semua guru staf dan karyawan semoga apa yang semua berikan diganti berlipat sama Allah. Dan untuk anakku ibu bangga sama kamu,terimakasih untuk perjuangan selama ini.<br />
+Semoga acara final moment besok berjalan lancar aamiinn <br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">LUH SYAIFUDIN</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 19:45</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terimakasih pada ustadzah dan ustadzah yg  telah mendidik dan mencerdaskan  putra putri kami, insyaallah kebaikan bpk ibu di catat sebagai ama sholeh </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Aji</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 19:20</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah..<br />
+Selamat anakQ, semoga sukses dan keberuntungan sllu menyertaimu, dan Allah selalu menjagamu</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">S Rukani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 17:28</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, terima kasih kepada seluruh guru dan staf sekolah atas ilmu, bimbingan, serta kasih sayang yang diberikan kepada anak kami. Semoga Allah SWT membalas segala kebaikan dengan pahala yang berlipat dan menjadikan sekolah ini semakin maju, berkah, dan istiqamah dalam mencetak generasi saleh dan salehah.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anon Sulistyo</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 16:38</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation to all students! Keep chasing your dreams and never stop reaching for the stars in the next chapter of your education guys!<br />
+<br />
+Robbi habli minassholihin. Aamiin<br />
+<br />
+Thanks to all the wonderful teachers and school staff for supporting our children. May Allah SWT bless you all with the most beautiful rewards!</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ayu Retno Hartanti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 16:33</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Dear Agha, <br />
+We are so proud of you today and every day. May Allah SWT bless your future with knowledge, courage, happiness, and success. Keep chasing your dreams, stay true to your values, and remember that wherever life takes you, our love and prayers are always with you.<br />
+<br />
+Love,<br />
+Ibuk </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 16:16</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation Angkatan 23<br />
+Semoga Ilmu yang sudah di berikan bermanfaat.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Argya Nawal satyadharma</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 15:48</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Amelia candra</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 15:22</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1"><br />
+Semoga segala ilmu dan usaha terbaik dr ustad dan ustadzah di Smepdalas mendapat kebaikan berlipat sari Allah SWT</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Maya</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 14:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation. Welcome to High School. See you on top. Thanks to all greatest teacher. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">.</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 13:49</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-red-900/40 text-red-400 border-red-700 whitespace-nowrap">Not Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">suwartono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 13:48</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">semoga acara finnal moment angkatan 23 sukses</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nurul Hidayah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 11:34</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Momen ini bukan hanya kelulusan, tapi bukti kerja keras, doa dan bimbingan yg tak pernah lelah....<br />
+HAPPY GRADUATION anakku Ghaisan, terimakasih sudah berproses sejauh ini untuk menjadi versi terbaik kamu.....<br />
+Terimakasih kepada seluruh guru dan civitas SPEMDALAS yg telah mendidik dengan sabar dan penuh cinta....<br />
+Semoga ilmu yg didapat jadi berkah dan langkah selanjutnya selalu dimudahkan, aamiin.<br />
+SPEMDALAS GRADE  IX 🎓<br />
+PROUD TO BE A PART OF THIS BIG FAMILY ✊️</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Mas Ario Firmansyah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 09:03</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga Acara berjalan sukses</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Novita Ayu Ningrum </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 07:16</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas pencapaian nya.<br />
+Barakallah fii ilmi fiddunya wal akhirah<br />
+<br />
+Bismillah Allah mudahkan di jenjang selanjutnya. Aamiin...</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Cicik Rohmawati </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 06:47</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga diberikan kelancaran dan keberkahan <br />
+Sukses selalu </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Cicik Rohmawati </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">17 Jun 2026, 06:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Cicik Rohmawati </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Murni Sri Rahayu</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 22:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga anak-anak diberikan kemudahan dan kesuksesan di jenjang selanjutnya.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Laila Rochmawati</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 21:44</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat &amp; sukses, untuk melanjutkan pendidikan ke tingkat SMA.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Warsono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 21:39</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Success for this final moment and can give good memories for all graduates.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Harunur Rosyid</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 21:05</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Diberi kemudahan dan kelancaran.... selama menempuh pendidikan di Sekolah Menengah Atas. Amin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">suwartono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 20:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">I hope the final moment of the 23rd batch goes smoothly, amen.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Diah Safitri </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 19:14</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat menuju jenjang berikutnya, smg Allah SWT memberikan segala kemudahan dan kelancaran. Sukses selalu buat anak2 hebat Angk.23. Aamiin Aamiin Yaa Robbal Alamiin.<br />
+ Proud to you....😍</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Isnyoto Wahyu Martono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 18:29</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">semoga acara berjalan dengan lancar</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Vetty Elmira Roosalien</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 18:22</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Your dedication and perseverance have finally paid off. Congratulations on your graduation!</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anggraini Puspitasari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 18:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Smg acara berjalan lancar. Anak² dimudahkan di langkah selanjutnya. Aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yuyun Faridah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 16:07</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga acaranya dilancarkan Allah </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">sofia Meiliasari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 14:52</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">sofia Meiliasari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 14:18</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation. <br />
+See you on top</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Emmy Wulan Prawesti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 14:06</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah.... Happy Graduation anak² angk-23 Spemdalas Gresik... <br />
+<br />
+Semoga pencapaian ini menjadi awal dari kesuksesan yang lebih besar di dunia dan akhirat 😊🤲🏻<br />
+<br />
+Terimakasih Ustad &amp; Ustadzah atas kesabarannya mendidik &amp; membimbing anak². semoga lelah jenengan menjadi lillah 🤲🏻</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Eka Fardiana</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 13:52</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, selamat atas kelulusan Dimas Adlyn Kauthar!<br />
+Perjalanan belajarmu masih panjang, jadikan pencapaian ini sebagai motivasi untuk terus berprestasi. Semoga Allah SWT selalu memberikan kemudahan untuk mencapai impianmu dijenjang pendidikan selanjutnya atau karier yg cemerlang.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">nia</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 12:18</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">happy graduation &amp; good luck ✨</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Latif Sugiarto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 11:58</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusan Lauris <br />
+Semoga ilmu yang didapatkan  selama menempuh pendidikan di spemdalas bisa bermanfaat bagi diri sendiri dan orang lain</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tiffany Rachmania Darmawan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 11:40</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ratri</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 10:47</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusannya Kak 🥰<br />
+Apapun hasilnya nanti, mama selalu berterima kasih padamu telah mengusahakan segalanya, dan semoga hal baik selalu bersamamu. <br />
+<br />
+it&#039;s not always easy, but that&#039;s life. <br />
+Be strong  because there are better days ahead. <br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yetty Fatmawati</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 10:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga acr berjalan dgn lancar dan sukses</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Lilik Rahmawati</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 10:03</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Tataplah masa depan dengan bismillah dan raihlah kesuksesan dengan hamdalah.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Mahfudho</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 08:37</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation<br />
+Semoga sukses</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tendra Dwi Saputra</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 07:15</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dewy Kartika</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">16 Jun 2026, 07:14</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Bismillah</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anis wahyuni </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 22:23</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusannya, semoga tercapai cita citanya</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dwi Widya</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 22:05</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusannya ya mas putra.... Teruslah menimba ilmu ke jenjang yg lebih tinggi lg agar apa yg kamu cita-citakan bisa tercapai/terwujud. Dan tak lupa saya ucapkan banyak terimakasih kepada ust&amp;ustdz Spemdalas yg telah membimbing&amp;mendidik anak kami dg penuh kesabaran, ketulusan&amp;kasih sayang.<br />
+Smoga ilmu yg didapat selama 3 tahun bermanfaat.<br />
+Mas jangan pernah meninggalkan sholat 5 waktu&amp;teruslah berdoa utk keselamatan dunia&amp;akhirat.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nofri R</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 21:18</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation angkatan 23 SMP Muhammadiyah 12 GKB</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dianasari P.</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 21:11</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Satu babak telah selesai ,babak baru yang lebih besar sedang menanti.Happy Graduation Nak,kejarlah mimpimu setinggi Langit..Sukses selalu SMP Muhammadiyah 12 GKB Dan semua wisudawan angkatan 23...Barakallah fii iLmi....🥳🫰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Zamyeri, S.T</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 20:58</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulations buat wisudawan angkatan 23 SMP Muhammadiyah 12 GKB untuk naik ke jenjang yang lebih tinggi, perjalanan kalian masih panjang, tetap semangat dan terus belajar untuk menjadi orang sukses kelak🤩💪🏻</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Suci R</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 20:52</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat ats kelulusan mu,ini bukan akhir,tapi masih menjadi titik awal perjuangan mu menjadi lebih dewasa,mandiri dan akan menemukan makna berjuang untuk kehidupan mu selanjutny. Teruslah menjadi anak yg baik,walau kamu tumbuh menjadi manusia dewasa.love you.🤎</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Risya widyastuti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 20:24</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yeny </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 19:34</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Setiap akhir adalah awal dari perjalanan baru.Selamat atas kelulusan siswa siswi Spemdalas angkatan ke 23.Teruslah bermimpi besar ,berusaha dengan sungguh-sungguh jangan pernah berhenti belajar. Terimakasih ustadz ustazah atas bimbingannya yang tiada kenal lelah.semoga SPEMDALAS semakin Terdepan </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Erfan Zainuddin</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 19:26</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ma&#039;rifah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 19:25</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Endah purwaningtias</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 18:26</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusannya kakak. Semangat terus belajarnya, perjalananmu masih panjang.  Semoga keberuntungan selalu menyertaimu nak. Terimakasih kepada guru2 spemdalas sudah menemani dan mengajarkan ilmu kepada anak2 kami. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tinik Apriliani </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 18:09</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-red-900/40 text-red-400 border-red-700 whitespace-nowrap">Not Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Dear kakak.. selamat atas kelulusanmu ya nak,, semoga ilmu yang kamu dapat selama tiga tahun ini,menjadi bekal untukmu melangkah ke jenjang yang lebih tinggi,serta bermanfaat untuk masa depanmu,perjalananmu masih panjang jaga semangatmu,, <br />
+Doa ayah dan ibu selalu menyertaimu semoga keberuntungan selalu berpihak padamu..🥳🎉🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nur imron</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 18:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terimakasih kepada SMP muhammadiyah 12 gresik atas segala ilmu, bimbingan, dan kasih sayang yang telah diberikan. Sekolah ini akan selalu menjadi bagian penting dalam perjalanan hidup ini. Sekolah ini bukan hanya tempat kami menuntut ilmu, tetapi juga menjadi rumah kedua yang penuh kenangan, kebersamaan, serta pelajaran yang berharga. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ely Ernawati</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 17:35</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusannya Anakku... Semoga ilmu yang didapatkan di Spemdalas berkah dan bermanfaat di dunia &amp; akhirat. <br />
+<br />
+Terima kasih ustadz dan ustadzah atas kesabaran membimbing dan memberikan ilmunya kepada anak-anak kami. <br />
+Semoga Spemdalas  tambah jaya  sukses selalu jadi sekolah favorit di Gresik. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nurhanifah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 17:33</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">&quot;Ilmu tanpa adab seperti api tanpa kayu bakar&quot;<br />
+&quot;Adab tanpa ilmu seperti jasad tanpa ruh&quot; <br />
+Keduanya merupakan satu kesatuan mutlak. Memiliki keduanya secara seimbang akan menjadikan kita tidak hanya pintar secara intelektual, tetapi juga bijak, rendah hati, tidak sombong dan menyombongkan diri. <br />
+Selamat atas kelulusannya, perjalanan masih panjang, teruslah berjuang dan kedepannkan adab. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nuranisa</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 17:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">&quot;Kenangan di SPEMDALAS akan menjadi bagian indah dalam hidup. Simpan persahabatan, bawa ilmu, dan lanjutkan perjalanan menuju masa depan yang gemilang.&quot;</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Vivie wiyono</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 17:01</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation 🥰🥰<br />
+Selamat anak2 hebat,semoga kalian menjadi pribadi yg taat dn bermanfaat..terimakasih untuk guru2 spemdalas yang telah ikhlas memberikan ilmu kepada anak kami💙<br />
+3th mengatar ke sekolah ternyata benar2 secepat itu 🥲<br />
+Terimakasih banyak sy ucapkan ,terutama ustadzah ilmi yg sabar mendidik anak saya 🥰🥰 sehat selalu ustdzh ilmi 💙💖<br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Achmad Afandi</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 16:38</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Jangan berhenti bermimpi hanya karena satu bab telah selesai. Teruslah belajar, berkembang, dan berjuang meraih cita-cita. Semoga langkah kalian selalu diberi kemudahan, kesuksesan, kesehatan, dan keberkahan. Jadilah generasi yang membanggakan keluarga, bangsa, dan agama.Aamiin. 🌟🤲🏻<br />
+<br />
+Semoga SPEMDALAS selalu menjadi juara, dan menjadi sekolah terbaik sepanjang masa 👍💯🏆🏆🏆</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Didik Junaedi</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 16:15</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">&quot;Happy graduation, dear all students. Our prayers are always with you. May Allah ta&#039;aala bless your knowledge, guide your steps, and grant you a bright future. Big thanks to the school for this amazing journey.&quot;</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Venny Indah Saputri</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 16:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation.. <br />
+Terima kasih nak.. abi dan mama bangga atas prestasi dan usahamu selama menimba ilmu di SMP 12 Muhammadiyah Gresik. Semoga SPEMDALAS bertambah JAYA kedepannya &amp; mencetak banyak prestasi anak didiknya. Aamiin YRA</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Arif Yudianto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 16:04</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat untuk Anannda Bariq , sudah melewati masa pendidikan SMP di SMP Muhamadiyah 12 , semoga menjadi bekal untuk lebih bisa berkembang ke depan menjadi Generasi Sholeh dan berguna bagi bangsa dan negara.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Akub Candekia S A</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 15:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Untuk anak-anak kami yang hari ini telah lulus, semoga ilmu yang diperoleh menjadi bekal untuk meraih cita-cita dan menjadi pribadi yang sholeh dan sholehah, membanggakan orang tua, guru, serta agama.<br />
+Terima kasih atas segala ilmu, ketulusan, dan kasih sayang yang telah diberikan. Jasa Bapak/Ibu guru akan selalu kami kenang sepanjang masa.<br />
+<br />
+Bravo SPEMDALAS </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rika Nurwahyuni</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 15:50</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congrats! <br />
+Langkah kecil menuju masa depan besar<br />
+Semangat terus yaa</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ruri Kurnia Andany</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 15:48</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusan mu mas, Ayah dan Ibu sangat bangga atas semua usaha serta kerja kerasmu selama tiga tahun ini. Semoga ilmu yang kamu dapatkan di bangku SMP berkah, bermanfaat, dan menuntunmu menjadi anak yang saleh. Terima kasih sudah belajar dan berusaha dengan tekun dan terbaik yang kamu bisa. Semoga Allah selalu melindungimu dan memberimu kemudahan di sekolah yang baru.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rani Sungkaswari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 15:33</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Thank you to the ustadz and ustadzah who have guided and educated for the past 3 years. Hopefully, the knowledge can be useful for the next level and may it become a field of jariyah rewards that never ends. I apologize if there are any wrong words and actions during these three years.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rani Sungkaswari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 15:30</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Spemdalas is the first Islamic-based secondary school in the city of Gresik which is increasingly successful, prosperous and growing full of innovation</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Miming Yuliawati </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 15:16</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation...!!!<br />
+Selamat atas kelulusan anak2<br />
+Semoga ilmu yang didapat kan di spemdalas bermanfaat, dan menjadikan sukses di jenjang pendidikan selanjutnya <br />
+Untuk laoshi Amalia terimakasih untuk 3th nya mendampingi anak2 dengan kesabaran dan ketulusan nya. Terimakasih untuk musrif Ma&#039;had spemdalas sudah menjadi kan anak2 kami anak yg mandiri dan anak2 yg taat beribadah.<br />
+Terimakasih spemdalas untuk semua nya semoga kedepannya lebih maju dan lebih sukses lagi aminnnnnn<br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yunita Ika Permatasari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 14:52</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih kepada Ustad Ustadzah yang telah membimbing anak-anak. Para karyawan, satpam dan pramubakti sekolah yang memberikan pelayanan dengan baik. Khusus kepada Kepala Sekolah Bpk. Yugo Terima kasih banyak telah membuat Spemdalas menjadi lebih baik dengan segala inovasinya. Semoga ke depannya tetap menjadi sekolah yang favorit dan terbaik. Mohon doanya untuk anak-anak semoga sukses di jenjang berikutnya dan bisa meraih cita-citanya. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nanin Ambinari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 14:47</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terimakasih atas bimbingannya selama 3 tahun, semoga Spemdalas semakin berkembang dan terbaik.<br />
+Untuk anak2 selamat dan semangat belajar di jenjang selanjutnya 🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Endah Herawaty</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 14:30</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">I&#039;d like to say thank you very much for all teachers and academic staff for supporting our kids creating their future.<br />
+Kids, keep up the good work!!</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rike Tanjung</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 13:31</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">&quot;Alhamdulillah.. selamat atas kelulusan Ananda. Semoga ilmu yang diperoleh menjadi bekal meraih masa depan yang cerah. Teruslah berusaha, berdoa, dan menjadi anak yang berbakti serta membanggakan keluarga. Setiap orang tua selalu mendoakan yang terbaik untuk Ananda&quot;<br />
+<br />
+#Terima kasih ustad &amp; ustadzah<br />
+#Terima kasih SPEMDALAS</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Mety arbianto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 13:20</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation 🥳✨️<br />
+Semangat belajar lagi anak2 dan berprestasi ke jenjang berikutnya adalah awal meraih impian dan harapan di masa depan 💪<br />
+Terimakasih SPEMDALAS semoga terus mencetak anak2 yang berprestasi dan beraklaqul karimah 🤲</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dita</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 13:07</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih atas bimbingan selama 3 tahun ini. Semoga Spemdalas bisa lebih berkembang dan bisa bersaing di tahun2 berikutnya</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ritatun Nisa&#039;</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 12:57</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat untuk anak&quot; semua<br />
+terima kasih ustadz ustadzah atas bimbingannya.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Wulan Dewi</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 12:44</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduations siswa siswi SPEMDALAS angkatan 23 ... Good Luck and wish You all the Best😎👏👏<br />
+Trimakasih ustadz dan ustadzah bimbingan dan supportnya untuk putra putri kami❤️🙏</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Hasinah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 12:41</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Assalamu&#039;alaikum warahmatullahi wabarokaatuh <br />
+Semoga acaranya berjalan&#039; lancar </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Hasinah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 12:39</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-red-900/40 text-red-400 border-red-700 whitespace-nowrap">Not Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Assalamu&#039;alaikum <br />
+Semoga acaranya  berjalan&#039; lancar </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anis S</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 12:39</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusan anak anak Spemdalas angkatan ke 23 <br />
+Terima kasih atas bimbingan , pendamping, penjagaan para ustad ustzh selama di sekolah <br />
+Bismillah ilmu yang di berikan menjadi ilmu yang bermanfaat dan menjadi salah satu bekal anak anak meraih kesuksesan </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Lucky Puspita</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 11:55</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat utk anak2 kelas 9 dan semoga semua harapan kalian di masa depan dapat terwujud</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Cut Sylvia Yusuf</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 11:12</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Bismillah..<br />
+Our heartfelt gratitude to all teachers &amp; staff of SMP Muhammadiyah 12 for their dedication, guidance &#039;n support throughout our son&#039;s (Irhasz) journey.<br />
+Thank you for helping shape not only his education but also his character. May Allah bless SMP Muhammadiyah 12 and all who serve within it 🩵</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Devi Asriveni</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 11:01</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation angkatan 23 Spemdalas, Selamat menuju jenjang lebih tinggi, semoga anak-anak kita semua menjadi generasi yang sukses, saleh dan salehah, aamiin...<br />
+Terimakasih sebesar- besarnya kepada pihak sekolah Spemdalas, ustad/ustadzah yang telah mendidik putra putri kami dengan penuh kesabaran dan kasih sayangnya selama 3 tahun ini, sukses selalu..</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">ERNI KAVRINAWATI</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 11:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation..&quot;<br />
+Selamat Atas kelulusannya Anak² semuaa, semoga ilmu yg kalian dapatkan di SMP bermanfaat, Sukses terus di SMA menggapai impian kalian..&quot;</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Fais Rochimah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:57</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terimakasih sudah diberikan kesempatan untuk bisa belajar di SPEMDALAS, terimakasih untuk ustadz dan ustadzah yang sudah membimbing anak kami selama 3 tahun. Kami akan selalu merindukan SPEMDALAS.....❤</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rizka N</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:54</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selama dan Sukses unt Final Moment Spemdalas 2026 🌹</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Venna Murdina Ovis</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:50</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation angkatan 23, sukses selalu buat kalian semua. Terima kasih kepada Ustadz dan Ustadzah atas bimbingannya selama ini.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dewi Ariyanti </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:49</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">I would like to thank all the teachers staff and everyone involved at all levels</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dewi Mariyuani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:48</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-red-900/40 text-red-400 border-red-700 whitespace-nowrap">Not Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">selamat dan sukses, untuk semua siswa siswi angkatan ke - 23, bangga bisa sekolah di SMP Muhammadiyah 12 GKB, sekolah berprestasi dan sekolah para juara. <br />
+Terima kasih kepada ustad dan ustazah yang telah membimbing ananda selama 3 tahun. Bismilah menjadi amal jariyah ustad dan ustazah semua. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Shanty riskasari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:39</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Barakallahu fiik<br />
+Semoga masa masa sekolah menjadi perjalanan indah yg penuh prestasi, persahabatan baik dan kenangan terbaik</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ernawati Thohir</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:34</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">*Terima Kasih Spemdalas…<br />
+Thank you for making school feel like home.<br />
+*Terima Kasih ustd ustdzah…<br />
+Thank you for being an amazing teacher.<br />
+Terima Kasih telah membersamai kedua anak kami, membimbing, mendidik, membina anak kami. <br />
+Sedih harus berpisah krn anak ketiga kami tidak bisa menjadi bagian dr Spemdalas. Akan tetapi berpisah bukan akhir dari segalanya… *hug*<br />
+Congratulations on your graduation! So proud of you. Keep reaching for the stars! You did it! The world is your oyster.<br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">DYAH RAHAYU PURWANTI</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:33</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">One chapter closed, new one begin,,,,happy graduation sholih sholihah SMP MUHAMMDIYAH 12 GKB👏💐<br />
+<br />
+Barokallah fii &#039;ilmi, semoga sukses dunia akhirat, dan tetap jdi apapun yg terbaik sesuai versi kalian masing&quot;🫶<br />
+<br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Ari gunarsih</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:30</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga acaranya lancar n sukses</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Fitha Istiani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:30</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">&quot;Selamat merayakan kelulusan! Masa SMP telah usai, dan petualangan baru di bangku putih abu-abu telah menanti. Jadikan setiap pencapaian ini sebagai batu loncatan untuk meraih cita-citamu yang lebih tinggi. You nailed it!&quot;</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rininta Herning Hapsari </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:27</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah 3th menuntut ilmu di SPEMDALAS dengan bimbingan para ustadz serta ustadzah. Terima kasih banyak atas kesabaran, nasehat, bimbingannya serta memberikan semangat untuk terus belajar dan bersosialisasi. Ya Allah kami mohon agar ilmu yang beliau berikan menjadi berkah dan bermanfaat bagi masa depannya, apa yang menjadi cita-cita nya di kabulkan oleh Allah SWT. Semoga para ustadz dan ustadzah diberikan umur panjang yang barokah, rezeki yang lancar dan berlimpah serta di berikan kebahagiaan dunia akhirat. Aamiin.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Wiwik Sri Haryani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:21</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation anak anak Q smua, Sukses selalu🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Endah Nursanti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:19</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih atas bimbingan ustadz dan ustadzah selama ini...mohon doa buat anak kami di masa depan untuk menjadi anak yg sholeh , sukses dan berguna untuk sekitar nya...aaminn..🤲</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Immama ch</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:15</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah dan terimakasih banyak kami ucapkan untuk semua semua guru atas ilmu &amp; banyak hal yg telah diberikan kepada anak kami &quot;bismillah nantinya akan menjadi ilmu yg bermanfaat&quot;.<br />
+<br />
+Bismillah kebaikan njenengan akn berbalas pahala berlimpah serta mendapatkan banyak keberkahan dlm hidup. Aamiin 🤲🏻</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Heny Tri</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:15</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation u anak2 angkatan 23 SMP Muhammadiyah 12 GKB,,<br />
+Semoga sukses selalu<br />
+Terima kasih u semua ustad &amp; ustdzah</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Niko Agung</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:13</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation Angkatan 23..<br />
+Wiss You All The Best..</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rinastutik</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:10</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima kasih kepada seluruh assatidz dan assatidzah SMP Muhammadiyah 12 GKB yg telah membimbing dan membina anak kami hingga lulus dan menjadi  anak soleh insyaa Allah. Semoga kedepannya anak kami tetap bisa menjaga marwah  sekolahnya.  </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Evy Andriani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:09</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah 3 th telah kami lewati utk putra kami meskipun akademik masih standart tapi non akademik putra kami terbimbing hingga bisa masuk GU talent jatim , terima kasih untuk ustad n ustadzah sebagai wali kelas maupun sebagai guru pembimbing dalam non akademik , sempdalas memang sekolah nya para juara dengan banyak prestasi</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Sri wintari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:04</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat untuk anak-anak hebat...terima kasih ustadz dan ustadzah atas bimbingan dan kesabarannya membersamai anak2</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Aries Rosita</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:02</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah 3 tahun sudah anak saya bergabung menjadi siswi di Spemdalas..sekolah impian sekolah berprestasi dan sekolah para juara...<br />
+Terima kasih kepada Ustad dan Ustazah untuk bimbingan kesabaran nya dalam mendidik anak anak kami,Bismillah menjadi amal jariyah Ustad Ustazah semua<br />
+Aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Sri Harini</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:02</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga sukses dan lancar acaranya 🥰</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Pradita Eka Putri</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:01</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Dear kk Qee,<br />
+Lower secondary is a time of immense transition, and you have handled it with such resilience and dedication.<br />
+Watching you grow through these lower secondary years has been an absolute joy. You’ve navigated new subjects, bigger challenges, and discovered so much about who you are. <br />
+Congratulation..🌟 you survived the middle school years with style, grace, and a lot of hard work. As you step into upper secondary, remember to keep that curiosity alive. We are so incredibly proud of the person you are becoming! Cheers to closing this session and starting an exciting new adventure in upper secondary. Carry the lessons you&#039;ve learned here into your next chapter.<br />
+You&#039;re going to crush it! The future is yours!🌟<br />
+Thanks a million to all teachers of SMPM 12 GKB.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Tri Armadijanto, S. Pd</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 10:00</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillaah, 3 tahun dijenjang SMP adalah membentuk jati diri, dari semua ilmu dan pengetahuan yg didapat moga menjadikan kesuksesan dijenjang2 selanjutnya, dan utk ustadz , ustdzh terima kasih mendampingi mereka... berjaya selalu *spemdalas*</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Lilik isbandiyah </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:59</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Perpisahan ini bukanlah akhir dari segalanya, melainkan langkah awal bagi anak-anak kita untuk menapaki jenjang pendidikan yang lebih tinggi dan menggapai cita-cita mereka.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Nur wahyu triani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:58</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah sdh lulus ananda di spemdalas, terima kasih ustad ustadzah atas bimbingannya, semoga Allah subhanahu wata&#039;ala membalas kebaikan njenengan semua  </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Heryadi Asmuanto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:54</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Bismillah, Semoga angkatan 23 SMP muhammadiyah 12 GKB menjadi anak yang sholeh &amp; sholeha. slalu berprestasi juga sukses kedepannya.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Esna Habibaty</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:54</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation buat semua siswa angkatan 23, semoga sukses menanti kalian di jenjang berikutnya. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Fathan Azka Ramadhana</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:54</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Bangga bisa sekolah di spemdalas sekolah ber prestasi dan keren<br />
+terimakasih untuk ustadz dan ustadzah yg telah membimbing anak kami selama 3 thn semoga spemdalas semakin maju<br />
+doa akan anak kami menjadi anak yg berprestasi dan sukses menggapai cita citanya 🙏<br />
+Aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Adirani Fitriandayani</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:51</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulilah sudah lulus, selamat untuk kelas 9, kalian semua hebat, terima kasih untuk semua pengajar di spemdalas, semoga segala kejayaan selalu membersamai spemdalas dan putra putri kami, aamiin</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Wahono </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:48</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Semoga acaranya lancar </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Emy Dewi M</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:47</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">It&#039;s amazing,keep shining!!</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Elly Sundari. SE</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:46</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Terima Kasih ustadz dan ustdzh selama mendampingi putra2 yang dimana mereka proses belajar utk tentang banyak hal , untuk menjadi dirinya sendiri, belajar ketekunan , kerja keras dan bertanggung jawab. serta bekal kekuatan iman dan taqwa.moga ilmu dan pembelajaran yang diberikan menjadikan jalan menuju kesuksesan mereka. Amin yra..... sehat sehat selalu keluarga ustadz dan ustdzh, hanya doa2 baik yg bisa saya berikan. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Intan</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:44</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat atas kelulusan, Tiga tahun masa SMP adalah fondasi hebat untuk meraih mimpi yang lebih besar. Jangan pernah berhenti belajar dan siap-siap melangkah ke jenjang SMA dengan semangat baru.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anisatus solicha</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:42</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulation and Graduation SMP Muhammadiyah 12 ke-23. </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Oktavia</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:42</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Sukses terus anak anakku, sehat terus dan kejar terus mimpi mimpimu untuk meraih kesuksesan mu kelak...aaamiinn yra</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Rizka Dian Febrianti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:41</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy Graduation to the grade IX students of SMP Muhammadiyah 12 GKB Gresik.<br />
+</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Anastasia Meylinda </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:41</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat anak anak hebat..<br />
+Selamat berjuang di jenjang pendidikan selanjutnya..<br />
+Terima kasih kepada ustad dan ustadzah atas semua ilmu dan kesabaran nya dalam mendidik Putri kami </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yunia Urwati Wusko</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:34</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Congratulations on your graduation, Class of 2026! You’ve worked hard and grown so much these past 3 years. This is just the beginning of a bigger journey. Keep dreaming big and never stop learning.<br />
+<br />
+May Allah bless your next steps, make your path easier, and give you success in high school and beyond. We’re proud of you.</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dwi astuti</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:29</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Kerja keras, upaya dan ketekunan adalah kunci besar meraih kesuksesanmu. Gunakanlah keberhasilanmu hari ini dalam kebaikan. Orangtua  akan selalu siap untuk memberimu kekuatan dan dukungan. Selamat wisuda anakku sayang...</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">olivia ayu</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:21</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">terima kasih untuk semua ustad dan ustadzah sudah membimbing anak kami sampai ke jenjang ini<br />
+kami ucapkan banyak2 terima kasih</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">olivia ayu</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:20</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-red-900/40 text-red-400 border-red-700 whitespace-nowrap">Not Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">terima kasih untuk semua ustad dan ustadzah sudah membimbing anak kami sampai ke jenjang ini<br />
+kami ucapkan banyak2 terima kasih</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Syaifuddin zuhri</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:19</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Suroto </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">15 Jun 2026, 09:18</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-red-900/40 text-red-400 border-red-700 whitespace-nowrap">Not Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Sorry, I&#039;m still on work duty</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Murdiono, ST</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 22:49</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat dan sukses selalu untuk ananda semua dan teruntuk juga untuk seluruh civitas akademika </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Sugeng</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 22:18</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah, selamat anak-anakku yang telah menyelesaikan studi di spemdalas, semoga sukses selalu </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Yudo broto</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 21:28</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Alhamdulillah semoga anak suksea dunia akhirat.. SPEMDALAS semakin maju..</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Fitri Wulandari </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 19:25</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Masyaa Allah, <br />
+Angkatan ke-23 Spemdalas, selalu di hati❤️</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Dias Budiasih</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 14:18</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Selamat melangkah ke jenjang SMA untuk anak” ku angkatan 23 SMP Muhammadiyah 12 GKB! Masa putih abu-abu sudah menanti. Jadikan kelulusan ini sebagai batu loncatan untuk menjadi pribadi yang lebih mandiri dan berprestasi di kedepannya</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Athiq Amiliyah</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 14:09</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">&quot;Every ending marks the start of a new beginning. Congratulations to the Grade IX students of SMP Muhammadiyah 12 GKB Gresik. Dream big, stay humble, and continue to make a positive impact wherever you go.&quot;</p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Durrotul hasanah </h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">12 Jun 2026, 13:57</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Happy graduation untuk semua angkatan 23, semoga sukses </p></div><div class="bg-navy-800 p-4 rounded-lg border border-navy-700">    <div class="mb-2 flex justify-between items-start gap-2">        <div>            <h4 class="font-medium text-gold-400">Eldyan Ayu Puspita Sari</h4>            <p class="text-[10px] md:text-xs text-gray-500 mt-1">09 Jun 2026, 07:14</p>        </div>        <span class="text-xs px-2 py-1 rounded border bg-green-900/40 text-green-400 border-green-700 whitespace-nowrap">Present</span>    </div>    <p class="text-gray-300 text-sm leading-relaxed mt-1">Thank You for Amazing students<br />
+</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </section>
+
+        <footer class="py-12 border-t border-navy-800 text-center relative z-10">
+            <div class="max-w-3xl mx-auto px-6 reveal">
+                
+                <!-- Teks Penutup Pengganti Logo -->
+                <div class="mb-10 space-y-4">
+                    <p class="text-gray-300 font-serif italic text-lg md:text-xl">
+                        "Thank you for your presence Mr./Mrs."
+                    </p>
+                    <div class="pt-2">
+                        <p class="text-gold-400/80 text-xs md:text-sm tracking-[0.2em] uppercase font-light">
+                            Best regards
+                        </p>
+                        <p class="text-white font-medium text-lg md:text-xl tracking-wide mt-2">
+                            SMP Muhammadiyah 12 GKB Gresik
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ornamen Pemisah -->
+                <div class="flex justify-center gap-4 text-gray-500 mb-6">
+                    <span class="w-16 h-px bg-navy-700 mt-3"></span>
+                    <i class="fa-solid fa-graduation-cap text-gold-500/50"></i>
+                    <span class="w-16 h-px bg-navy-700 mt-3"></span>
+                </div>
+                
+                <p class="text-gray-600 text-sm tracking-wider">© 2026 Crafted with ❤️ for Spemdalas Graduation.</p>
+            </div>
+        </footer>
+
+        <button id="music-control" class="fixed bottom-6 right-6 w-12 h-12 bg-navy-800 border border-gold-500 rounded-full flex items-center justify-center text-gold-500 shadow-[0_0_15px_rgba(212,175,55,0.4)] z-40 transition-all duration-300 transform hover:scale-110 opacity-0 invisible">
+            <i id="music-icon" class="fa-solid fa-music animate-pulse"></i>
+
+        </button>
+
+    </main>
+
+
+
+    <script>
+        const bgMusic = document.getElementById('bg-music');
+        const musicIcon = document.getElementById('music-icon');
+        const musicControl = document.getElementById('music-control');
+        const coverScreen = document.getElementById('cover-screen');
+        const openBtn = document.getElementById('open-btn');
+        let isPlaying = false;
+
+        bgMusic.volume = 0.5;
+
+        // Fungsi utama membuka undangan
+        function openInvitation() {
+            // Sembunyikan cover
+            coverScreen.classList.add('hide-cover');
+
+            // Izinkan scroll
+            document.body.style.overflow = 'auto';
+
+            // Tampilkan tombol musik
+            setTimeout(() => {
+                musicControl.classList.remove('opacity-0', 'invisible');
+            }, 1000);
+
+            // Langsung coba play musik segera setelah klik
+            tryPlayMusic();
+            
+            // JALANKAN KUPU-KUPU
+            initButterflies(); 
+        }
+
+        // MESIN KUPU-KUPU 
+        function initButterflies() {
+            const container = document.getElementById('butterfly-container');
+            
+            function spawn() {
+                if(!container) return;
+                const b = document.createElement('div');
+                b.className = 'absolute pointer-events-none transition-all z-40';
+                
+                // Logika Random
+                const isLeft = Math.random() > 0.5; // Muncul dari kiri atau kanan
+                const size = 20; // Ukuran fix kecil 20px
+                const startY = Math.random() * window.innerHeight; // Ketinggian awal
+                const endY = startY + (Math.random() * 500 - 250); // Titik akhir
+                const duration = 12000 + Math.random() * 8000; // Durasi terbang
+
+                // Posisi awal
+                b.style.left = isLeft ? '-100px' : '110vw';
+                b.style.top = startY + 'px';
+                b.style.transition = `left ${duration}ms linear, top ${duration}ms ease-in-out`;
+
+                // Arah hadap badan
+                const facing = isLeft ? 90 : -90;
+
+                // Mencetak Bentuk Kupu-kupu
+                b.innerHTML = `
+                    <div style="transform: rotate(${facing}deg); transform-origin: center;">
+                        <div class="flight-path" style="width: ${size}px; height: ${size}px;">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100" class="butterfly-glow">
+                                <path class="wing-left" d="M50,45 C30,20 5,10 5,35 C5,50 20,60 30,60 C20,80 30,95 40,90 C45,80 50,60 50,45 Z" />
+                                <path class="wing-right" d="M50,45 C70,20 95,10 95,35 C95,50 80,60 70,60 C80,80 70,95 60,90 C55,80 50,60 50,45 Z" />
+                                <path d="M48,30 C45,15 35,10 30,15 M52,30 C55,15 65,10 70,15" fill="none" stroke="#e5c07b" stroke-width="1.5"/>
+                                <circle cx="50" cy="32" r="3.5" class="butterfly-body" />
+                                <rect x="48" y="35" width="4" height="25" rx="2" class="butterfly-body"/>
+                            </svg>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(b);
+
+                // Perintah untuk bergerak melintasi layar
+                setTimeout(() => {
+                    b.style.left = isLeft ? '110vw' : '-100px';
+                    b.style.top = endY + 'px';
+                }, 50);
+
+                // Hapus saat sudah keluar dari layar
+                setTimeout(() => { b.remove(); }, duration);
+            }
+
+            for(let i=0; i<4; i++) {
+                setTimeout(spawn, Math.random() * 2000);
+            }
+            setInterval(spawn, 3000);
+        }
+
+        openBtn.addEventListener('click', openInvitation);
+
+        musicControl.addEventListener('click', function () {
+            if (isPlaying) {
+                bgMusic.pause();
+                isPlaying = false;
+                musicIcon.classList.replace('fa-music', 'fa-play');
+                musicIcon.classList.remove('animate-pulse');
+            } else {
+                tryPlayMusic();
+            }
+        });
+
+        function tryPlayMusic() {
+            const playPromise = bgMusic.play();
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    isPlaying = true;
+                    musicIcon.classList.replace('fa-play', 'fa-music');
+                    musicIcon.classList.add('animate-pulse');
+                }).catch(error => {
+                    console.log("Audio play failed: ", error);
+                    isPlaying = false;
+                    musicIcon.classList.replace('fa-music', 'fa-play');
+                    musicIcon.classList.remove('animate-pulse');
+                });
+            }
+        }
+
+        const countDownDate = new Date("June 20, 2026 07:00:00").getTime();
+        const x = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+        }, 1000);
+
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveals[i].getBoundingClientRect().top;
+                const elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        setTimeout(reveal, 500);
+
+        const rsvpForm = document.getElementById('rsvp-form');
+        const wishesContainer = document.getElementById('wishes-container');
+        const wishCountSpan = document.getElementById('wish-count');
+        
+        // Ambil jumlah ucapan saat ini
+        let wishCount = parseInt(wishCountSpan.innerText) || 0; 
+
+        rsvpForm.addEventListener('submit', function (e) {
+            e.preventDefault(); 
+            
+            const name = document.getElementById('guest-name').value;
+            const attendance = document.getElementById('guest-attendance').value; 
+            const message = document.getElementById('guest-message').value;
+            const btn = rsvpForm.querySelector('button');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+            
+            const formData = new FormData();
+            formData.append('nama', name);
+            formData.append('kehadiran', attendance); 
+            formData.append('pesan', message);
+            
+            fetch('simpan_ucapan.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                if(data.trim() === 'Sukses') {
+                    if (wishCount === 0) {
+                        wishesContainer.innerHTML = ''; 
+                    }
+            
+                    // Ambil waktu saat ini dari perangkat pengguna
+                    const now = new Date();
+                    const timeOptions = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+                    const timeString = now.toLocaleDateString('id-ID', timeOptions).replace(/\./g, ':');
+                    
+                    // Buat elemen visual agar langsung muncul tanpa perlu refresh
+                    const newWish = document.createElement('div');
+                    newWish.className = 'bg-navy-800 p-4 rounded-lg border border-navy-700 opacity-0 transition-opacity duration-500';
+                    
+                    const badgeClass = (attendance === 'Present') 
+                        ? 'bg-green-900/40 text-green-400 border-green-700' 
+                        : 'bg-red-900/40 text-red-400 border-red-700';
+                    
+                    newWish.innerHTML = `
+                        <div class="mb-2 flex justify-between items-start gap-2">
+                            <div>
+                                <h4 class="font-medium text-gold-400">${escapeHTML(name)}</h4>
+                                <p class="text-[10px] md:text-xs text-gray-500 mt-1">${timeString}</p>
+                            </div>
+                            <span class="text-xs px-2 py-1 rounded border ${badgeClass} whitespace-nowrap">${escapeHTML(attendance)}</span>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed mt-1">${escapeHTML(message).replace(/\n/g, '<br>')}</p>
+                    `;
+                    
+                    wishesContainer.prepend(newWish);
+                    
+                    // Efek Fade In
+                    setTimeout(() => { newWish.classList.remove('opacity-0'); }, 50);
+
+                    // Update total hitungan & Reset
+                    wishCount++;
+                    wishCountSpan.textContent = wishCount;
+                    rsvpForm.reset();
+
+                    // Animasi sukses pada tombol
+                    btn.innerHTML = '<i class="fa-solid fa-check"></i> Sent!';
+                    btn.classList.replace('bg-gold-500', 'bg-green-500');
+                    btn.classList.add('text-white');
+                    
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.classList.replace('bg-green-500', 'bg-gold-500');
+                        btn.classList.remove('text-white');
+                        btn.disabled = false;
+                    }, 3000);
+                } else {
+                    alert("Gagal mengirim ucapan, silakan coba lagi.");
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                }
+            })
+            .catch(error => {
+                alert("Terjadi kesalahan jaringan.");
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+        });
+
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g, tag => ({ '&': '&', '<': '<', '>': '>', "'": '&#39;', '"': '&quot;' }[tag]));
+        }
+    </script>
+
+</body>
+
+</html>
